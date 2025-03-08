@@ -1,0 +1,11 @@
+theme = rose-pine
+
+font-size = 15
+font-family = "JetBrains Mono"
+
+background = 000000
+window-padding-x = 12
+window-decoration = false
+background-opacity = 0.9
+cursor-style = block
+keybind = ctrl+t=new_tab
