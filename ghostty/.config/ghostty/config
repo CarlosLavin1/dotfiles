@@ -1,7 +1,8 @@
 theme = rose-pine
 
 font-size = 15
-font-family = "JetBrains Mono"
+#font-family = "JetBrains Mono"
+font-family = Iosevka
 
 background = 000000
 window-padding-x = 12
