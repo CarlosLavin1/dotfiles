@@ -8,6 +8,6 @@ font-family = "TX-02"
 background = 000000
 window-padding-x = 12
 window-decoration = false
-background-opacity = 0.9
+background-opacity = 0.8
 cursor-style = block
 keybind = ctrl+t=new_tab
