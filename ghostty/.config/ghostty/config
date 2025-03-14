@@ -9,7 +9,7 @@ background = 000000
 foreground = 9ccfd8
 window-padding-x = 12
 window-decoration = false
-background-opacity = 0.6
+background-opacity = 0.8
 background-blur = true
 cursor-style = block
 keybind = ctrl+t=new_tab
