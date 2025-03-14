@@ -4,7 +4,6 @@ return {
 	},
 	{
 		"L3MON4D3/LuaSnip",
-		version = "v2.*",
 		dependencies = {
 			"saadparwaiz1/cmp_luasnip",
 			"rafamadriz/friendly-snippets",
@@ -14,13 +13,13 @@ return {
 		"hrsh7th/nvim-cmp",
 		config = function()
 			local cmp = require("cmp")
-
 			require("luasnip.loaders.from_vscode").lazy_load()
+
 			cmp.setup({
 				snippet = {
 					-- REQUIRED - you must specify a snippet engine
 					expand = function(args)
-						vim.fn["vsnip#anonymous"](args.body)
+						--vim.fn["vsnip#anonymous"](args.body)
 						require("luasnip").lsp_expand(args.body)
 					end,
 				},
@@ -36,24 +35,12 @@ return {
 					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 				}),
 				sources = cmp.config.sources({
-					--{ name = 'nvim_lsp' },
+					{ name = 'nvim_lsp' },
 					{ name = "luasnip" }, -- For luasnip users.
 				}, {
 					{ name = "buffer" },
 				}),
 			})
-
-			--	local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			--local lspconfig = require("lspconfig")
-			--lspconfig.ts_ls.setup({
-			--		capabilities = capabilities,
-			--	})
-			--lspconfig.lua_ls.setup({
-			--capabilities = capabilities,
-			--})
-			--lspconfig.html.setup({
-			--capabilities = capabilities,
-			--})
 		end,
 	},
 }
