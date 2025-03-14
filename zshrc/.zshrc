@@ -108,7 +108,23 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias off='sudo shutdown now'
+alias c="cursor $1" 
+
+n() {
+    if [ -z "$1" ]; then
+        nvim "./"
+    fi
+    nvim "$1"
+}
+
 export gh="https://www.github.com/carloslavin1"
+clone() {
+    if [ -z "$1" ]; then
+        echo "Usage: clone <repository-name>"
+        return 1
+    fi
+    git clone "$hg/$1.git"
+}
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
