@@ -114,15 +114,12 @@ alias off='sudo shutdown now'
 alias c="cursor $1" 
 alias gs="git status"
 
-function gp() {
-    if [ "$1" ]; then
-        git add .
-        git commit -m "$1"
-        git push
-    else
-        return 1
-    fi
+gitpush() {
+    git add .
+    git commit -m "$1"
+    git push
 }
+alias gp="gitpush"
 
 function n() {
     if [ -z "$1" ]; then
