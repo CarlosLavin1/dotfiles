@@ -12,4 +12,8 @@ window-decoration = false
 background-opacity = 0.8
 background-blur = true
 cursor-style = block
+
 keybind = ctrl+t=new_tab
+keybind = performable:ctrl+c=copy_to_clipboard
+keybind = performable:ctrl+v=paste_from_clipboard
+keybind = performable:ctrl+f=text:tmux-sessionizer\n
