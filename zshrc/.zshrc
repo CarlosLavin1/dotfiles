@@ -112,8 +112,19 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias off='sudo shutdown now'
 alias c="cursor $1" 
+alias gs="git status"
 
-n() {
+function gp() {
+    if [ "$1" ]; then
+        git add .
+        git commit -m "$1"
+        git push
+    else
+        return 1
+    fi
+}
+
+function n() {
     if [ -z "$1" ]; then
         nvim "./"
     fi
@@ -126,7 +137,7 @@ clone() {
         echo "Usage: clone <repository-name>"
         return 1
     fi
-    git clone "$hg/$1.git"
+    git clone "$gh/$1.git"
 }
 
 export NVM_DIR="$HOME/.nvm"
