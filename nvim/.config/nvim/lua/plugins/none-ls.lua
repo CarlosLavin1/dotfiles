@@ -12,8 +12,8 @@ return {
         null_ls.builtins.formatting.isort,
         null_ls.builtins.formatting.black,
         null_ls.builtins.diagnostics.erb_lint,
-        require("none-ls.diagnostics.eslint"),
-        require("none-ls.code_actions.eslint")
+        require("none-ls.diagnostics.eslint_d"),
+        require("none-ls.code_actions.eslint_d")
       },
     })
     vim.keymap.set("n", "<C-s>", vim.lsp.buf.format, {})
