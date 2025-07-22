@@ -40,3 +40,6 @@ end)
 
 -- git
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+
+-- remap visual block mode
+vim.keymap.set('n', '<leader>v', '<C-v>', { noremap = true })
