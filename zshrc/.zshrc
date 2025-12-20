@@ -8,6 +8,7 @@ export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH=$PATH:$JAVA_HOME/bin
+export PATH=$PATH:/home/carch/.cargo/bin
 
 # scripts paths
 export PATH=$PATH:$HOME/.local/scripts

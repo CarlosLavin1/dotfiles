@@ -1,0 +1,69 @@
+{
+  "layer": "top",
+  "position": "top",
+  "modules-left": ["custom/archicon", "hyprland/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["pulseaudio", "custom/spotify", "memory", "custom/lock"],
+  "custom/spotify": {
+    "interval": 1,
+    "return-type": "json",
+    "exec": "waybar_media_display",
+    "exec-if": "pgrep spotify",
+    "on-click": "playerctl --player=spotify play-pause",
+    "on-scroll-up": "playerctl --player=spotify next",
+    "on-scroll-down": "playerctl --player=spotify previous",
+    "escape": true,
+  },
+  "hyprland/workspaces": {
+    "format": "{name}: {icon}",
+    "format-icons": {
+      "active": "",
+      "default": "",
+    },
+  },
+  "custom/archicon": {
+    "format": " \uf303 ",
+    "tooltip": false,
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+  },
+  "clock": {
+    "timezone": "America/Halifax",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%B %d, %Y - %I:%M}",
+  },
+  "network": {
+    "format-wifi": "󰤢 ",
+    "format-ethernet": "󰈀 ",
+    "format-disconnected": "󰤠 ",
+    "interval": 5,
+    "tooltip": false,
+  },
+  "cpu": {
+    "interval": 1,
+    "format": "  {icon0}{icon1}{icon2}{icon3} {usage:>2}%",
+    "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+  },
+  "memory": {
+    "interval": 30,
+    "format": "  {used:0.1f}G/{total:0.1f}G",
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", " "],
+    },
+    "on-click": "pavucontrol",
+  },
+  "custom/lock": {
+    "tooltip": false,
+    "on-click": "wofi-power-menu",
+    "format": "",
+  },
+  "later": {
+    "format": "<span class='icon'>{icon}</span> <span class='text'>{text}</span>",
+  },
+}
